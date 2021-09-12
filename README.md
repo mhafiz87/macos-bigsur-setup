@@ -1,13 +1,15 @@
 # **MAC OS BIG SUR SETUP**
 
 - [**MAC OS BIG SUR SETUP**](#mac-os-big-sur-setup)
-  - [**Software To Install**](#software-to-install)
-  - [**Homebrew**](#homebrew)
-  - [**pyenv**](#pyenv)
+  - [**Software/Apps/Packages To Install**](#softwareappspackages-to-install)
+    - [**Homebrew**](#homebrew)
+    - [**pyenv**](#pyenv)
+  - [**.zshrc**](#zshrc)
+  - [**References**](#references)
 
-## **Software To Install**
+## **Software/Apps/Packages To Install**
 
-## **Homebrew**
+### **Homebrew**
 
 - Run this line to install ***homebrew***:
 
@@ -15,28 +17,18 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-## **pyenv**
+### **pyenv**
 
 - Run lines below to install pyenv and python version. Change 3.6.0 to python version that you want to install
 
 ```bash
-brew install zlib sqlite bzip2 libiconv libzip
-brew install pyenv pyenv-virtualenv
+brew install openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip
+curl https://pyenv.run | bash
 nano ~/.zshrc
-
-...
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
-export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
-...
-
-. ~/.zshrc
-CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" pyenv install --patch 3.6.0 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
 ```
+
+- Install python version. Change 3.7.7 to another version that you want.
+CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include" LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib" pyenv install --patch 3.7.7 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\?full_index\=1)
 
 - To change python version:
 
@@ -45,3 +37,52 @@ pyenv global 3.7.7
 pyenv versions
 echo -e $'if command -v pyenv 1>/dev/null 2>&1; then\\n  export PYENV_ROOT="$HOME/.pyenv"\\n  export PATH="$PYENV_ROOT/bin:$PATH"\\n  eval "$(pyenv init --path)"\\n  eval "$(pyenv init -)"\\nfi' >> ~/.zshrc
 ```
+
+## **.zshrc**
+
+```bash
+#pyenv
+export PATH="$HoME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+#openssl
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include"
+
+#readline
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/readline/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/readline/include"
+
+#sqlite3
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite3/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite3/include"
+
+#xz
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/xz/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/xz/include"
+
+#zlib
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/zlib/include"
+
+#sqlite
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/sqlite/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite/include"
+
+#bzip2
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+#libiconv
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/libiconv/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/libiconv/include"
+
+#libzip
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/libzip/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/libzip/include"
+```
+
+## **References**
+
+- [pynenv](https://chamikakasun.medium.com/how-to-manage-multiple-python-versions-in-macos-2021-guide-f86ef81095a6)
