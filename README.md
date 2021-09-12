@@ -71,6 +71,7 @@ eval "$(pyenv init -)"\
 eval "$(pyenv virtualenv-init -)"\
 ' ~/.zshrc
 rm ~/.zshrc.bak
+echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 ```
 
 - Install python version. Change 3.7.7 to another version that you want.
@@ -88,3 +89,4 @@ pyenv global 3.7.7
 ## **References**
 
 - [pynenv](https://chamikakasun.medium.com/how-to-manage-multiple-python-versions-in-macos-2021-guide-f86ef81095a6)
+- https://github.com/pyenv/pyenv
