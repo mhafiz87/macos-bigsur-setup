@@ -92,6 +92,13 @@ CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix bzip2)/include -I$(
 pyenv global 3.7.7
 ```
 
+- To create virtual environment
+
+```bash
+pyenv virtualenv 3.7.7 venv_name
+source ~/.pyenv/versions/3.7.7/bin/activate
+```
+
 ## **References**
 
 - [pynenv](https://chamikakasun.medium.com/how-to-manage-multiple-python-versions-in-macos-2021-guide-f86ef81095a6)
