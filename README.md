@@ -99,6 +99,20 @@ pyenv virtualenv 3.7.7 venv_name
 source ~/.pyenv/versions/3.7.7/bin/activate
 ```
 
+### **Compress And Extract File**
+
+#### Compress
+
+```bash
+tar -jcvf archive_name.tar.bz2 folder_to_compress
+```
+
+#### Extract
+
+```bash
+tar -jxvf archive_name.tar.bz2 -C <path>
+```
+
 ## **References**
 
 - [pynenv](https://chamikakasun.medium.com/how-to-manage-multiple-python-versions-in-macos-2021-guide-f86ef81095a6)
