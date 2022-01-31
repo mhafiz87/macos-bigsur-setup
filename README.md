@@ -4,6 +4,9 @@
   - [**Software/Apps/Packages To Install**](#softwareappspackages-to-install)
     - [**Homebrew**](#homebrew)
     - [**pyenv**](#pyenv)
+    - [**Compress And Extract File**](#compress-and-extract-file)
+      - [Compress](#compress)
+      - [Extract](#extract)
   - [**References**](#references)
 
 ## **Software/Apps/Packages To Install**
@@ -24,8 +27,13 @@
 brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip
 
 echo '
-#pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
 
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+#pyenv
 #openssl
 export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include"
@@ -63,15 +71,13 @@ export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/libzip/lib"
 export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/libzip/include"
 
 ' >> ~/.zshrc
+```
 
-curl https://pyenv.run | bash
-sed -i '.bak' '/#pyenv/a\
-export PATH="$HOME/.pyenv/bin:$PATH"\
-eval "$(pyenv init -)"\
-eval "$(pyenv virtualenv-init -)"\
-' ~/.zshrc
-rm ~/.zshrc.bak
-echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+- If fail to install pyenv, do the following:
+
+```bash
+brew doctor
+git -C $(brew --repo homebrew/core) checkout master
 ```
 
 - Install python version. Change 3.7.7 to another version that you want.
