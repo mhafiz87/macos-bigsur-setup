@@ -1,0 +1,170 @@
+{
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "autoDocstring.customTemplatePath": "orbital.mustache",
+    "autoDocstring.docstringFormat": "google",
+    "autoDocstring.startOnNewLine": false,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.executorMap": {
+        "python": "$pythonPath -u $fullFileName"
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.showExecutionMessage": false,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.detectIndentation": true,
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.minimap.enabled": false,
+    "editor.lineNumbers": "on",
+    "editor.linkedEditing": true,
+    "editor.showFoldingControls": "always",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 10.0,
+    "editor.suggestSelection": "first",
+    "editor.tabSize": 4,
+    "explorer.openEditors.visible": 5,
+    "explorer.confirmDelete": false,
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "gitlens.mode.active": "review",
+    "gotoNextPreviousMember.symbolKinds": [
+        "class",
+        "function",
+        "method",
+    ],
+    "jupyter.interactiveWindowMode": "perFile",
+    "jupyter.askForKernelRestart": false,
+    "markdownlint.config": {
+        "MD033": false
+    },
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "python.languageServer": "Pylance",
+    "python.formatting.blackArgs": [
+        "--line-length=120"
+    ],
+    "search.quickOpen.includeHistory": false,
+    "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontSize": 10.0,
+    "terminal.integrated.cwd": "${fileDirname}",
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.isEnable": true,
+    "todohighlight.keywords": [
+        {
+            "isWholeLine": true,
+            "text": "TODO:"
+        },
+        {
+            "isWholeLine": true,
+            "text": "FIXME:"
+        }
+    ],
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-w>": false
+    },
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "a",
+                "y",
+                "<enter>"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "a",
+                "p"
+            ]
+        }
+    ],
+    "vim.smartRelativeLine": true,
+    "vim.surround": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "a",
+                "y",
+                "<enter>"
+            ]
+        }
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Default Dark+",
+    "workbench.editor.enablePreview": true,
+    "workbench.editor.pinnedTabSizing": "compact",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.startupEditor": "none",
+}
