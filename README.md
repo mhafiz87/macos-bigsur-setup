@@ -24,7 +24,7 @@
 - Run lines below to install pyenv and python version. Change 3.6.0 to python version that you want to install
 
 ```bash
-brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip
+brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust
 
 echo '
 export PATH="$HOME/.pyenv/bin:$PATH"
