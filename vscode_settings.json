@@ -5,7 +5,7 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "autoDocstring.customTemplatePath": "orbital.mustache",
+    // "autoDocstring.customTemplatePath": "orbital.mustache",
     "autoDocstring.docstringFormat": "google",
     "autoDocstring.startOnNewLine": false,
     "code-runner.clearPreviousOutput": true,
@@ -20,6 +20,7 @@
         "source.organizeImports": true
     },
     "editor.detectIndentation": true,
+    "editor.fontFamily": "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
@@ -61,6 +62,7 @@
     ],
     "search.quickOpen.includeHistory": false,
     "telemetry.telemetryLevel": "off",
+    "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 10.0,
     "terminal.integrated.cwd": "${fileDirname}",
     "todo-tree.general.tags": [
