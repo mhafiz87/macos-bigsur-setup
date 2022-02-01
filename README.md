@@ -2,6 +2,9 @@
 
 - [**MAC OS BIG SUR SETUP**](#mac-os-big-sur-setup)
   - [**Software/Apps/Packages To Install**](#softwareappspackages-to-install)
+    - [**zsh**](#zsh)
+      - [**oh my zsh**](#oh-my-zsh)
+      - [**powerlevel10k**](#powerlevel10k)
     - [**Homebrew**](#homebrew)
     - [**pyenv**](#pyenv)
     - [**Compress And Extract File**](#compress-and-extract-file)
@@ -11,6 +14,28 @@
 
 ## **Software/Apps/Packages To Install**
 
+### **zsh**
+
+#### **oh my zsh**
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+#### **powerlevel10k**
+
+- Download powerlevel10k
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+- Set theme to powerlevel10k
+
+```bash
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
 ### **Homebrew**
 
 - Run this line to install ***homebrew***:
@@ -19,12 +44,19 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+` Install Fira Code:
+
+```bash
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+```
+
 ### **pyenv**
 
 - Run lines below to install pyenv and python version. Change 3.6.0 to python version that you want to install
 
 ```bash
-brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust
+brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust carthage libimobiledevice ios-deploy node npm appium
 
 echo '
 export PATH="$HOME/.pyenv/bin:$PATH"
