@@ -2,10 +2,14 @@
 
 - [**MAC OS BIG SUR SETUP**](#mac-os-big-sur-setup)
   - [**Software/Apps/Packages To Install**](#softwareappspackages-to-install)
+    - [**Homebrew**](#homebrew)
     - [**zsh**](#zsh)
       - [**oh my zsh**](#oh-my-zsh)
       - [**powerlevel10k**](#powerlevel10k)
-    - [**Homebrew**](#homebrew)
+      - [**plugins**](#plugins)
+        - [**zsh-syntax-highlighting**](#zsh-syntax-highlighting)
+        - [**zsh-autosuggestions**](#zsh-autosuggestions)
+        - [**k**](#k)
     - [**pyenv**](#pyenv)
     - [**Compress And Extract File**](#compress-and-extract-file)
       - [Compress](#compress)
@@ -13,6 +17,20 @@
   - [**References**](#references)
 
 ## **Software/Apps/Packages To Install**
+
+### **Homebrew**
+
+- Run this line to install **homebrew**:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+- Install Fira Code:
+
+```bash
+curl -o ~/Library/Fonts/FiraCodeNF.ttf -LJO https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf
+```
 
 ### **zsh**
 
@@ -30,33 +48,47 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-- Set theme to powerlevel10k
+- Set `oh my zsh` theme to powerlevel10k
+- Set `typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW` to true
 
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
-### **Homebrew**
+#### **plugins**
 
-- Run this line to install ***homebrew***:
+##### **zsh-syntax-highlighting**
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-` Install Fira Code:
+- Download the plugins
 
 ```bash
-brew tap homebrew/cask-fonts
-brew install --cask font-fira-code
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
+- Include zsh-syntax-highlighting in ~/.zshrc plugins
+
+##### **zsh-autosuggestions**
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+- Include zsh-autosuggestions in ~/.zshrc plugins
+
+##### **k**
+
+```bash
+git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k
+```
+
+- Include k in ~/.zshrc plugins
 
 ### **pyenv**
 
 - Run lines below to install pyenv and python version. Change 3.6.0 to python version that you want to install
 
 ```bash
-brew install pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust carthage libimobiledevice ios-deploy node npm appium
+brew install coreutils pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust carthage libimobiledevice ios-deploy node npm appium
 
 echo '
 export PATH="$HOME/.pyenv/bin:$PATH"
