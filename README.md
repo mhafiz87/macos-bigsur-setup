@@ -48,8 +48,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-- Set `oh my zsh` theme to powerlevel10k
-- Set `typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW` to true
+- Set `oh my zsh` theme to powerlevel10k in `~/.zshrc`
+- Set `typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW` to true in `~/.p10k.zsh`
 
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
