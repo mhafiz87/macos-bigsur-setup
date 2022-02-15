@@ -10,7 +10,9 @@
         - [**zsh-syntax-highlighting**](#zsh-syntax-highlighting)
         - [**zsh-autosuggestions**](#zsh-autosuggestions)
         - [**k**](#k)
+        - [**.zshrc**](#zshrc)
     - [**pyenv**](#pyenv)
+    - [**tmux**](#tmux)
     - [**Compress And Extract File**](#compress-and-extract-file)
       - [Compress](#compress)
       - [Extract](#extract)
@@ -26,7 +28,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Install Fira Code:
+- Install Fira Code Nerd Font:
 
 ```bash
 curl -o ~/Library/Fonts/FiraCodeNF.ttf -LJO https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Regular/complete/Fira%20Code%20Regular%20Nerd%20Font%20Complete.ttf
@@ -49,11 +51,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 
 - Set `oh my zsh` theme to powerlevel10k in `~/.zshrc`
-- Set `typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW` to true in `~/.p10k.zsh`
 
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
+
+- Set `typeset -g POWERLEVEL9K_PYENV_PROMPT_ALWAYS_SHOW` to true in `~/.p10k.zsh`
 
 #### **plugins**
 
@@ -83,12 +86,27 @@ git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
 
 - Include k in ~/.zshrc plugins
 
+##### **.zshrc**
+
+- Settings to change:
+
+```bash
+plugins=(
+    git
+    copydir
+    sudo
+    k
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+)
+```
+
 ### **pyenv**
 
 - Run lines below to install pyenv and python version. Change 3.6.0 to python version that you want to install
 
 ```bash
-brew install coreutils pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip rust carthage libimobiledevice ios-deploy node npm appium
+brew install tmux coreutils pyenv pyenv-virtualenv openssl readline sqlite3 xz zlib sqlite bzip2 libiconv libzip
 
 echo '
 export PATH="$HOME/.pyenv/bin:$PATH"
@@ -167,6 +185,15 @@ pyenv global 3.7.7
 ```bash
 pyenv virtualenv 3.7.7 venv_name
 source ~/.pyenv/versions/3.7.7/bin/activate
+```
+
+### **tmux**
+
+```bash
+echo '
+# Improve colors
+set -g default-terminal "screen-256color"
+' >> ~/.tmux.conf
 ```
 
 ### **Compress And Extract File**
