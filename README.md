@@ -93,7 +93,7 @@ git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/
 ```bash
 plugins=(
     git
-    copydir
+    copypath
     sudo
     k
     zsh-syntax-highlighting
