@@ -24,7 +24,7 @@
     "editor.formatOnSave": true,
     "editor.insertSpaces": true,
     "editor.minimap.enabled": false,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "editor.linkedEditing": true,
     "editor.showFoldingControls": "always",
     "editor.fontLigatures": true,
@@ -64,7 +64,8 @@
     "telemetry.telemetryLevel": "off",
     "terminal.integrated.fontFamily": "'FiraCode Nerd Font', Menlo, Monaco, 'Courier New', monospace",
     "terminal.integrated.fontSize": 10.0,
-    "terminal.integrated.cwd": "${fileDirname}",
+    // "terminal.integrated.cwd": "${fileDirname}",
+    "terminal.integrated.cwd": "${fileWorkspaceFolder}",
     "todo-tree.general.tags": [
         "BUG",
         "HACK",
@@ -80,6 +81,7 @@
     "todohighlight.keywords": [
         {
             "isWholeLine": true,
+            "color": "black",
             "text": "TODO:"
         },
         {
