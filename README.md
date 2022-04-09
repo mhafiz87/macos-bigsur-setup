@@ -184,7 +184,18 @@ pyenv global 3.7.7
 
 ```bash
 pyenv virtualenv 3.7.7 venv_name
-source ~/.pyenv/versions/3.7.7/bin/activate
+```
+
+- To activate virtual environment
+
+```bash
+pyenv activate venv_name
+```
+
+- To deactivate virtual environment
+
+```bash
+pyenv deactivate
 ```
 
 ### **tmux**
