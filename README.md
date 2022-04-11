@@ -204,6 +204,7 @@ pyenv deactivate
 echo '
 # Improve colors
 set -g default-terminal "screen-256color"
+set -g mouse on
 ' >> ~/.tmux.conf
 ```
 
